@@ -3,7 +3,7 @@
     --blue: #2191FB;
     --background: #F8F8F9;
     --text-gray: #444444;
-    --button-hover: #0071db
+    --button-hover: #0071db;
 }
 
 /* MAIN CSS */
@@ -158,7 +158,7 @@ button {
 
 
 
-/* MEDIA BREAKPOINTS */
+/* MEDIA BREAKPOINTS            */
 
 /* BREAKPOINT: 1300px */
 

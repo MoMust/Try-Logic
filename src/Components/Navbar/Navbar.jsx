@@ -1,10 +1,27 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Navbar.css";
 
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [addClass, setAddClass] = useState("");
+
+
+  useEffect(() => {
+    // Close the menu when the window is resized
+    window.addEventListener("resize", handleResize);
+  });
+
+  const handleResize = () => {
+    // Check if the window is resized and close the menu
+    if (window.innerWidth < 1100) {
+      setAddClass("");
+      setShowMenu(false);
+      document
+        .querySelector(".hero-container")
+        .classList.remove("header-small");
+    }
+  };
 
   const toggleMenu = () => {
     if (!showMenu) {
