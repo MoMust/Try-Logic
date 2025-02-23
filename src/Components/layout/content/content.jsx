@@ -1,9 +1,9 @@
 import React from 'react'
-import './style.css'
+import './Content.css'
 export const Content = () => {
   return (
-    <div className="content-container border">
-      <div className="content">SOme more contetn</div>
+    <div className="content-container ">
+      <div className="content">Content</div>
     </div>
   );
 }
