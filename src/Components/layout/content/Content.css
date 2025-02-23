@@ -1,0 +1,7 @@
+*{
+    background-color: var(--background);
+}
+
+.content-container {
+padding-left: 40px;
+}

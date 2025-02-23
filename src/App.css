@@ -1,8 +1,21 @@
+:root {
+    
+    font-family: "Maven Pro", serif;
+    --blue: #2191FB;
+    --background: #F8F8F9;
+    --text-gray: #444444;
+
+}
+
 .hero-container {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 150px 1fr;
+    gap: 10px;
 }
 
 
-
+.hero-container.header-small {
+    grid-template-rows: 400px 1fr;
+    
+}
