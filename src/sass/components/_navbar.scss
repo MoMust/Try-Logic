@@ -1,0 +1,220 @@
+@use "../../sass/utilities/index" as *;
+
+// Navbar
+.navbar-container {
+  @include flex-center(space-evenly);
+  padding: 0 1em;
+  color: black;
+
+  .logo {
+    width: 150px;
+  }
+
+  .navbar-links {
+    width: 600px;
+    font-size: 1.3em;
+    color: var(--text-gray);
+    font-weight: 400;
+
+    ul {
+      @include flex-center(space-between);
+      list-style: none;
+
+      li {
+        padding: 0 1em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .navbar-buttons {
+    width: 400px;
+    @include flex-center(space-between);
+    font-size: 20px;
+    background-color: $background;
+  }
+}
+
+// Link effect
+a {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 30px;
+    left: 0;
+    background-color: $blue;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+// Buttons
+button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+
+  &.buttonTest {
+    background-color: $blue;
+    color: white;
+  }
+
+  &.buttonSignUp {
+    background-color: white;
+    color: --blue;
+    border: 1px solid $blue;
+  }
+}
+
+// Mobile
+.navbar-menu-mobile-container {
+  display: none;
+
+  .navbar-links-mobile {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding-left: 20px;
+    width: 100%;
+
+    ul li a {
+      cursor: pointer;
+    }
+  }
+
+  .navbar-buttons-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 20px;
+
+    .buttonTest-mobile {
+      padding: 3px;
+      background-color: $blue;
+      width: 100px;
+      color: white;
+      font-size: 12px;
+    }
+
+    .buttonSignUp-mobile {
+      width: 100px;
+      color: $blue;
+      font-size: 12px;
+      border: 1px solid $blue;
+    }
+  }
+}
+
+// Knapp-hover-effekter (mobile)
+.buttonTest-mobile:hover {
+  background-color: $button-hover;
+  color: white;
+  transition: all 0.5s;
+}
+
+.buttonSignUp-mobile:hover {
+  color: $button-hover;
+  border: 3px solid $button-hover;
+  transition: all 0.5s;
+}
+
+// Media queries
+@media screen and (max-width: 1300px) {
+  .navbar-links {
+    width: 500px;
+    font-size: 1.3em;
+  }
+
+  .navbar-buttons {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .navbar-menu-mobile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    background-color: $background;
+    .navbar-links,
+    .navbar-buttons {
+      display: none;
+    }
+  }
+// Link effect
+  a {
+    &::before {
+      top: 28px;
+    }
+  }
+
+  // Hamburger-menyn
+  .menu-btn {
+    @include flex-center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    .menu-btn_burger {
+      width: 50px;
+      height: 6px;
+      background-color: $blue;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background-color: $blue;
+        border-radius: 5px;
+        transition: all 0.5s ease;
+      }
+
+      &::before {
+        transform: translateY(-16px);
+      }
+
+      &::after {
+        transform: translateY(16px);
+      }
+    }
+
+    &.open .menu-btn_burger {
+      transform: translateX(-50px);
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate(35px, -35px);
+      }
+
+      &::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+      }
+    }
+  }
+}
