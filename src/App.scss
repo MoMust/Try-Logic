@@ -1,0 +1,23 @@
+:root {
+    
+    // Variabler
+$font-family: "Maven Pro", serif;
+$blue: #2191fb;
+$background: #f8f8f9;
+$text-gray: #444444;
+$button-hover: #0071db;
+
+}
+
+.hero-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    gap: 10px;
+}
+
+
+.hero-container.header-small {
+    grid-template-rows: 400px 1fr;
+    
+}

@@ -1,0 +1,101 @@
+@use '../../sass/utilities/index' as *;
+
+// Global styles
+* {
+  background-color: $background;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Content wrapper
+.content-wrapper {
+  // For testing test-box
+  // position: relative;
+  margin-top: 30px;
+  padding: 100px;
+}
+
+// .test-box{
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100px;
+//   height: 100px;
+//   background-color: blue;
+// }
+
+
+// Content container
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: 1000px;
+}
+
+// Left section of the content intro
+.content-intro-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+//   justify-content: space-between;
+  .header-intro {
+    .header-text {
+      font-size: 60px;
+      font-weight: bold;
+      color: $text-gray;
+      font-family: $font-family-Anton;
+    }
+    .header-subtext {
+      font-size: 20px;
+      color: $text-gray;
+    }
+  }
+
+  // Button styles
+  button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    width: 500px;
+    height: 70px;
+
+    &.btn-start-test {
+      padding: 10px;
+      background-color: $blue;
+      color: white;
+      font-size: 30px;
+      margin-top: 64px;
+
+      &:hover {
+        background-color: $button-hover;
+        color: rgb(255, 255, 255);
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+.content-intro-right {
+    @include flex-center;
+  .content-intro-right-img {
+    
+    width: 70%;
+    height: 70%;
+    img {
+      border-radius: 5px;
+    }
+  }
+}
+
+// Additional content sections
+.content-intro-numbers,
+.content-intro-empty {
+  margin-top: 20px;
+}
